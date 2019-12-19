@@ -1,0 +1,17 @@
+Julia Sanford
+Network Systems
+Programming Assignment 2 - HTTP-based Web Server
+
+
+Intro:
+
+I created a multithreaded C program web proxy to handle multiple simultaneous requests from clients. It then creates a correct header and sends it to a server. Once it connects to the server and sends the request, it takes the content from the server and forwards it to the client. In the middle, it checks a hostname cache to see if it does not have to do a DNS lookup again. If it is not in the cache it will do DNS and write the hostname,ip pair to the host_cache.txt file. Then, it will check the blacklist.txt file to see if the hostname or ip is blacklisted. If it is, it will nto fulfill the request, if it isn't it will continue. Lastly, it checks a page_cache.txt file to see if the hashed url has been requested already. If it is not in the cache, it will write it and go into the cache directory to create a file with the hash name to fill it with the content of that page. If it is cached, it will go to the cache/ directory and read from the file and send to the client from there.
+
+
+How to run the program:
+
+1. Run make clean
+2. Run make
+3. Configure your web browser to accept a proxy from your IP with a host of 10001
+4. Run ./webproxy 10001
+5. In Firefox or Google Chrome, open the url http://netsys.cs.colorado.edu

@@ -1,0 +1,5 @@
+netsys.cs.colorado.edu,128.138.202.178
+ajax.googleapis.com,172.217.12.10
+detectportal.firefox.com,129.19.64.230
+www.foobar.com,173.231.209.34
+10.0.0.1,10.0.0.1
