@@ -1,0 +1,26 @@
+Julia Sanford
+Network Systems
+Programming Assignment 4 - Distributed File System
+
+
+Intro:
+
+I created a distributed file system with a client and server. The client has the option to put, get, and list files. The client breaks up the files it puts into 4 equal pieces and distributes it to the servers, receives and pieces back together the files, and see which files are available for piecing back together. If one server is down, the client is able to reconstruct the file because each server has two pieces of the file. If two servers go down or one piece of the file did not make it onto the server, the client will see that it is not able to reconstruct the file.
+
+
+How to run the program:
+
+1. Run make clean
+2. Run make
+3. Ensure you have a dfc.conf file with credentials.
+4. Run 4 servers on different ports according to your dfc.conf file.
+	./dfs /DFS1 <port1>
+	./dfs /DFS2 <port2>
+	./dfs /DFS3 <port3>
+	./dfs /DFS4 <port4>
+5. Run a client
+	./dfc <dfc.conf file>
+6. Choose one of the 3 options: list, get <filename>, or put <filename>
+	list will list the files
+	put will put files into the servers directories
+	get will piece the files back and put them into the files directory
