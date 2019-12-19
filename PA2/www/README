@@ -1,0 +1,17 @@
+Julia Sanford
+Network Systems
+Programming Assignment 2 - HTTP-based Web Server
+
+
+Intro:
+
+I created a multithreaded C program to handle multiple simultaneous requests from users and display the desired web page. First, the program connects to a client and ensures the port is the same. This program receives requests from the client. For each request, a thread is  created to parse the request to know what files to look up and send back. The thread will read the request and parse the GET line from it. It will check if the filename exists in the current root directory. If it does it will read the file and send a header and the file contents back to the client. If there is any type of error, such as a file doesn't exist, the server will send an Internal Server Error message to the client. This server will stay open and continuously serve requests until the program is shut down via Ctrl + C.
+
+
+How to run the program:
+
+1. Run make clean
+2. Run make
+3. Decide on a port number such as 8888
+4. Run ./server <port number>
+5. In Firefox or Internet Explorer, open the url http://localhost:<port number>/ or http://localhost:<port number>/inside/
